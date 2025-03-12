@@ -43,6 +43,12 @@ console.log(sortedByName);
 console.log("\n\n objects")
 const obj = { a: 30, b: 10, c: 20, d: 5 };
 
+// Sort by keys
+const sortedByKey = Object.fromEntries(
+  Object.entries(obj).slice().sort(([key1], [key2]) => key1.localeCompare(key2))
+);
+console.log(sortedByKey); 
+
 // Filter: Keep values > 10, Map: Double values, Sort: By value (ascending)
 const result = Object.fromEntries(
   Object.entries(obj)
